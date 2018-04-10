@@ -8,6 +8,10 @@ TagManager:
   - HighPlatform
   - SoftPlatform
   - Boss
+  - Interactable
+  - Button
+  - SoundTrigger
+  - Dog
   layers:
   - Default
   - TransparentFX

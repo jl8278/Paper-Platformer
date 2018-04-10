@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 
 
@@ -15,6 +16,9 @@ public class Player : MonoBehaviour {
 	private float MaxJump = 2;
 
 	public static Player instance;
+
+	public AudioSource CatMeow;
+
 
 
 
@@ -35,6 +39,11 @@ public class Player : MonoBehaviour {
 		float horizontalMovement = Input.GetAxis ("Horizontal");
 
 
+			
+		
+
+
+
 		playerRB.velocity = new Vector2 (horizontalMovement * walkingMultiplier, playerRB.velocity.y);
 
 		if (Input.GetButtonDown ("Jump")) {
@@ -53,11 +62,12 @@ public class Player : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other ){
 
 
-		if (other.gameObject.name == "dog") {
+		if (other.gameObject.tag == "Dog") {
 		
 			Destroy (this.gameObject);
-
 		}
+
+
 
 		if (other.gameObject.tag == "HardFloor" ) {
 			JumpCount = MaxJump;
@@ -73,6 +83,14 @@ public class Player : MonoBehaviour {
 			JumpCount = MaxJump ;
 
 		}
+	}
+
+	void OnTriggerEnter2D(Collider2D col){
+
+		if(col.CompareTag("SoundTrigger")){
+			CatMeow.Play();
+		}
+	
 	}
 
 

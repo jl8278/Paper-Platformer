@@ -26,7 +26,7 @@ public class HomingMissile : MonoBehaviour {
 
 
 	void HomingMissileMovement(){
-		Vector2 direction = (Vector2)target.position - rb.position;
+		Vector2 direction = ((Vector2)target.position - rb.position)*Time.deltaTime;
 
 		direction.Normalize ();
 

@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+
+
 
 public class dog : MonoBehaviour {
 
@@ -10,6 +13,7 @@ public class dog : MonoBehaviour {
 	public float distance = 10.0f;
 	public GameObject Player;
 	public bool isfacingright = true;
+	public AudioSource CatMeow;
 
 	// Use this for initialization
 	void Start ()
@@ -30,6 +34,8 @@ public class dog : MonoBehaviour {
 
 
 			useSpeed = directionSpeed; 
+
+
 		}
 		else if(origx - transform.position.x < -distance)
 		{
@@ -37,9 +43,14 @@ public class dog : MonoBehaviour {
 				FlipDirection();
 			useSpeed = -directionSpeed; 
 
+
 		}
 		transform.Translate(useSpeed*Time.deltaTime,0,0);
+	
+
 	}
+
+
 
 
 	void FlipDirection(){
@@ -60,5 +71,7 @@ public class dog : MonoBehaviour {
 		}
 
 	}
+
+
 
 }
