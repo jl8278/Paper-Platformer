@@ -10,10 +10,22 @@ public class SoftPlatformDisappear : MonoBehaviour {
 
 
 	void Update(){
-		
+
+		if (hasTimeHasStarted == true) {
+
+			CountDownTimer -= Time.deltaTime;
+			if (CountDownTimer <= 0) {
+
+				PlatformDisappear ();
+				hasTimeHasStarted = false;
+
+			}
+
+		} 
+	}
 
 	
-	}
+
 
 
 	public void PlatformDisappear(){
@@ -28,19 +40,15 @@ public class SoftPlatformDisappear : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other){
 		
-		if(gameObject.CompareTag ("Player")){
-			if (hasTimeHasStarted) {
-				CountDownTimer -= Time.deltaTime;
-				if (CountDownTimer <= 0) {
+		if(other.gameObject.CompareTag ("Player")){
+			if (hasTimeHasStarted == false) {
+				hasTimeHasStarted = true;
+				CountDownTimer = 5f;
 
-					PlatformDisappear ();
-
-				}
-
-			}
 		}
 			
+		
 		}
-	
 
+}
 }
