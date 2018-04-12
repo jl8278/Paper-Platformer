@@ -18,6 +18,7 @@ public class Player : MonoBehaviour {
 	public static Player instance;
 
 	public AudioSource CatMeow;
+	public AudioSource playerDestroyed;
 
 
 
@@ -65,6 +66,7 @@ public class Player : MonoBehaviour {
 		if (other.gameObject.tag == "Dog") {
 		
 			Destroy (this.gameObject);
+			playerDestroyed.Play ();
 		}
 
 

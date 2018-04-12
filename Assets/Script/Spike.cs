@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Spike : MonoBehaviour {
 	public GameObject Player;
+	public AudioSource playerDestroyed;
 	// Use this for initialization
 	void Start () {
 		
@@ -18,6 +19,7 @@ public class Spike : MonoBehaviour {
 		if (col.gameObject.tag == "Player") {
 			
 			Player.SetActive (false);
+			playerDestroyed.Play ();
 
 		}
 
