@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 
 
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour {
 
 	public AudioSource CatMeow;
 	public AudioSource playerDestroyed;
+	public Text winText;
 
 
 
@@ -83,7 +85,7 @@ public class Player : MonoBehaviour {
 		}
 		if (other.gameObject.tag == "HighPlatform" ) {
 			JumpCount = MaxJump ;
-
+			winText.text = "You Win!";
 		}
 	}
 
