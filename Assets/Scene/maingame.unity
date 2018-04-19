@@ -3140,7 +3140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Platform: {fileID: 1492503146}
-  hasTimeHasStarted: 1
+  hasTimeHasStarted: 0
 --- !u!114 &1492503149
 MonoBehaviour:
   m_ObjectHideFlags: 0
